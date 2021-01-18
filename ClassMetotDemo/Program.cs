@@ -41,16 +41,18 @@ namespace ClassMetotDemo
 
             MusteriManager musteriManager = new MusteriManager();
 
-            var liste = musteriManager.MusteriEkle(musteri3, musteriler2);
-            //if (liste == null)
+            //var liste = musteriManager.MusteriEkle(musteriler3,musteri2);
+            musteriManager.MusteriEkle(musteriler3,musteri);
+            //Console.WriteLine("Ekleme metodu çalıştı\n");
+            //Console.WriteLine("Güncel Liste :");
+            //foreach (var musteriList in liste)
             //{
-            //    Console.WriteLine("Lütfen en az");
+            //    Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " + musteriList.Tckn);
             //}
-            Console.WriteLine("Güncel Liste :");
-            foreach (var musteriList in liste)
-            {
-                Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " + musteriList.Tckn);
-            }
+
+            Console.WriteLine("------------------------------------------------");
+            
+            
             // musteriManager.MusteriSil(musteri);
         }
     }
