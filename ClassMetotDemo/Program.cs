@@ -41,11 +41,11 @@ namespace ClassMetotDemo
 
             MusteriManager musteriManager = new MusteriManager();
 
-            var liste = musteriManager.MusteriEkle(musteri3, musteriler3);
-            if (liste == null)
-            {
-                Console.WriteLine("Lütfen en az");
-            }
+            var liste = musteriManager.MusteriEkle(musteri3, musteriler2);
+            //if (liste == null)
+            //{
+            //    Console.WriteLine("Lütfen en az");
+            //}
             Console.WriteLine("Güncel Liste :");
             foreach (var musteriList in liste)
             {

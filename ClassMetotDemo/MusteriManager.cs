@@ -29,7 +29,7 @@ namespace ClassMetotDemo
         {
             Musteri[] eklenecekListe;
             
-            for (int i = 0; i < musteriler.Length; i++)
+            for (int i = 0; i <= musteriler.Length; i++)
             {
                 eklenecekListe = musteriler;
                 
@@ -42,13 +42,7 @@ namespace ClassMetotDemo
 
                 }
 
-                
             }
-            
-            Console.WriteLine(musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı; " + musteri.Tckn + " kimlik nolu müşterimiz sisteme başarıyla eklenmiştir.");
-            
-
-            Console.WriteLine("-----------------------------------------------------------------------");
 
             return null;
         }
