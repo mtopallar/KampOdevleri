@@ -34,19 +34,24 @@ namespace ClassMetotDemo
             musteri3.Uyruk = "T.C.";
             musteri3.Tckn = "123321456";
 
-            Musteri[] musteriler = new Musteri[] {musteri,musteri2,musteri3};
-            Musteri[] musteriler2 = new Musteri[] {musteri,musteri2};
-            Musteri[] musteriler1 = new Musteri[] {musteri};
-            
+            Musteri[] musteriler = new Musteri[] { musteri, musteri2, musteri3 };
+            Musteri[] musteriler2 = new Musteri[] { musteri, musteri2 };
+            Musteri[] musteriler1 = new Musteri[] { musteri };
+            Musteri[] musteriler3 = new Musteri[] { };
+
             MusteriManager musteriManager = new MusteriManager();
 
-            var liste =  musteriManager.MusteriEkle(musteri3,musteriler1);
-           Console.WriteLine("Güncel Liste :");
-           foreach (var musteriList in liste)
-           {
-               Console.WriteLine(musteriList.MusteriAdi+" "+musteriList.MusteriSoyadi+" "+musteriList.Tckn);
-           }
-           // musteriManager.MusteriSil(musteri);
+            var liste = musteriManager.MusteriEkle(musteri3, musteriler3);
+            if (liste == null)
+            {
+                Console.WriteLine("Lütfen en az");
+            }
+            Console.WriteLine("Güncel Liste :");
+            foreach (var musteriList in liste)
+            {
+                Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " + musteriList.Tckn);
+            }
+            // musteriManager.MusteriSil(musteri);
         }
     }
 }

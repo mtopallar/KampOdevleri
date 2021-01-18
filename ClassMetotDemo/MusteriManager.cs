@@ -42,7 +42,7 @@ namespace ClassMetotDemo
 
                 }
 
-                return null;
+                
             }
             
             Console.WriteLine(musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı; " + musteri.Tckn + " kimlik nolu müşterimiz sisteme başarıyla eklenmiştir.");
