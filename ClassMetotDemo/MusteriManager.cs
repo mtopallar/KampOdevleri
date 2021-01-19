@@ -31,63 +31,67 @@ namespace ClassMetotDemo
             Musteri[] eklenecekListe;
             eklenecekListe = musteriler;
 
-            //if (musteriler.Length == 0)
-            //{
-                Array.Resize(ref eklenecekListe, eklenecekListe.Length + 1);
-                for (int j = musteriler.Length; j < eklenecekListe.Length; j++)
+            Array.Resize(ref eklenecekListe, eklenecekListe.Length + 1);
+            for (int j = musteriler.Length; j < eklenecekListe.Length; j++)
+            {
+
+                eklenecekListe[j] = musteri;
+
+                Console.WriteLine(musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı;" + musteri.Tckn + " kimlik numaralı müşteri sisteme başarıyla eklenmiştir.\n");
+                Console.WriteLine("Güncel liste: \n");
+                foreach (var musteriList in eklenecekListe)
                 {
-                     
-                    eklenecekListe[j] = musteri;
-
-                   
-                    foreach (var musteriList in eklenecekListe)
-                    {
-                        Console.WriteLine(musteriList.MusteriAdi);
-                    }
+                    Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " + musteriList.Tckn + " " + musteriList.Cinsiyet + " " + musteriList.Yas + " " + musteriList.Uyruk);
                 }
-            //}
-            //else
-            //{
-            //    for (int i = eklenecekListe.Length; i <= musteriler.Length; i++)
-            //    {
-            //        Array.Resize(ref eklenecekListe, eklenecekListe.Length + 1);
-            //        for (int j = musteriler.Length; j < eklenecekListe.Length; j++)
-            //        {
-                        
-            //            eklenecekListe[j] = musteri;
+            }
 
+            Console.WriteLine("-----------------------------------------------------------");
 
-            //            foreach (var musteriList in eklenecekListe)
-            //            {
-            //                Console.WriteLine(musteriList.MusteriAdi);
-            //            }
-                        
-            //        }
-            //    }
-
-
-            //}
-
-            //return null;
         }
 
         internal void MusteriSil(Musteri[] musteriler, Musteri musteri)
         {
-            Musteri[] silinecekListe;
+            Musteri[] silinecekListe = new Musteri[0];
+            int sayac = 0;
 
             if (musteriler.Length != 0)
             {
-                for (int i = 0; i < musteriler.Length; i++)
+                Console.WriteLine("Müşteri silmeden önce sistemdeki müşteri listemiz şu şekildedir : \n");
+                foreach (var mevcutList in musteriler)
                 {
-                    if (musteriler[i].Tckn != musteri.Tckn)
+                    Console.WriteLine(mevcutList.MusteriAdi + " " + mevcutList.MusteriSoyadi + " " + mevcutList.Tckn + " " + mevcutList.Cinsiyet + " " + mevcutList.Yas + " " + mevcutList.Uyruk);
+                }
+
+                foreach (var musteri1 in musteriler)
+                {
+                    var isim = musteri1.MusteriAdi;
+
+                    if (isim != musteri.MusteriAdi)
                     {
-                        silinecekListe = new Musteri[i];
-                        silinecekListe[i] = musteriler[i];
+                        Array.Resize(ref silinecekListe, silinecekListe.Length + 1);
+                        silinecekListe[sayac] = musteri1;
+                        sayac++;
+
+                        if (silinecekListe.Length == musteriler.Length - 1)
+                        {
+                            Console.WriteLine("\n" + musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı; " + musteri.Tckn + " Tckn numaralı; müşterimiz sistemden başarı ile silinmiştir.\n");
+                            Console.WriteLine("Güncel müşteri listemiz şu şekildedir: \n");
+
+                            foreach (var musteriGuncelListe in silinecekListe)
+                            {
+                                Console.WriteLine(musteriGuncelListe.MusteriAdi + " " + musteriGuncelListe.MusteriSoyadi + " " + musteriGuncelListe.Tckn + " " + musteriGuncelListe.Cinsiyet + " " + musteriGuncelListe.Yas + " " + musteriGuncelListe.Uyruk);
+                            }
+                        }
                     }
                 }
+                
+            }
+            else
+            {
+                Console.WriteLine("Müşteri zaten müşteriler listemizde mevcut değil.\n");
             }
 
-            Console.WriteLine(musteri.Id + " Id'li; " + musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı; " + musteri.Tckn + " kimlik nolu ve müşterimiz sistemden başarıyla silinmiştir.");
+            Console.WriteLine("-------------------------------------------------------------");
         }
     }
 }
