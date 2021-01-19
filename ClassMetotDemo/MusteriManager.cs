@@ -11,10 +11,19 @@ namespace ClassMetotDemo
 
         internal void MusteriListele(Musteri[] musteriler)
         {
-            foreach (Musteri musteri in musteriler)
+            if (musteriler.Length == 0)
             {
-                Console.WriteLine(musteri.MusteriAdi + " " + musteri.MusteriSoyadi + " " + musteri.Cinsiyet + " " + musteri.Uyruk + " " + musteri.Yas);
+                Console.WriteLine("Müşteri listenizde kayıtlı müşteri bulunmamaktadır.");
             }
+            else
+            {
+                Console.WriteLine("Mevcut müşteri listeniz şu şekildedir: \n");
+                foreach (Musteri musteri in musteriler)
+                {
+                    Console.WriteLine(musteri.MusteriAdi + " " + musteri.MusteriSoyadi + " " + musteri.Cinsiyet + " " + musteri.Uyruk + " " + musteri.Yas);
+                }
+            }
+
 
             Console.WriteLine("-----------------------------------------------------");
         }
@@ -83,7 +92,7 @@ namespace ClassMetotDemo
 
                     foreach (var musteri1 in kontrolListesi)
                     {
-                        
+
                         if (musteri1 != null)
                         {
                             Array.Resize(ref listedeOlmayan, listedeOlmayan.Length + 1);
@@ -91,10 +100,19 @@ namespace ClassMetotDemo
                             indexer++;
                         }
                     }
-                    foreach (var musteri2 in listedeOlmayan)
+
+                    if (listedeOlmayan.Length == 0)
                     {
-                        Console.WriteLine(musteri2.MusteriAdi + " " + musteri2.MusteriSoyadi + " " + musteri2.Tckn + " " + musteri2.Cinsiyet + " " + musteri2.Yas + " " + musteri2.Uyruk);
+                        Console.WriteLine("Listede tek kayıtlı olan " + musteri.MusteriAdi + " isimli; " + musteri.MusteriSoyadi + " soyisimli müşteriyi sildikten sonra listenizde kayıtlı müşteri kalmamıştır.");
                     }
+                    else
+                    {
+                        foreach (var musteri2 in listedeOlmayan)
+                        {
+                            Console.WriteLine(musteri2.MusteriAdi + " " + musteri2.MusteriSoyadi + " " + musteri2.Tckn + " " + musteri2.Cinsiyet + " " + musteri2.Yas + " " + musteri2.Uyruk);
+                        }
+                    }
+
                 }
             }
             else
