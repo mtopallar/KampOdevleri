@@ -56,6 +56,8 @@ namespace ClassMetotDemo
 
             if (musteriler.Length != 0)
             {
+                //liste doluysa fakan gönderilen müşteri listedekilerden biri değilse listede yok yazacak.
+
                 Console.WriteLine("Müşteri silmeden önce sistemdeki müşteri listemiz şu şekildedir : \n");
                 foreach (var mevcutList in musteriler)
                 {
