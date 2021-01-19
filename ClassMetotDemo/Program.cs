@@ -43,7 +43,7 @@ namespace ClassMetotDemo
 
            // musteriManager.MusteriEkle(musteriler2,musteri3);
 
-            musteriManager.MusteriSil(musteriler2,musteri3);
+            musteriManager.MusteriSil(musteriler1,musteri);
         }
     }
 }
