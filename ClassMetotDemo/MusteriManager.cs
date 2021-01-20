@@ -42,7 +42,13 @@ namespace ClassMetotDemo
 
             if (Array.Exists(musteriler, m => m.Tckn == musteri.Tckn))
             {
-                Console.WriteLine("Eklemek istediğiniz müşteri zaten listenizde kayıtlıdır.");
+                Console.WriteLine("Eklemek istediğiniz müşteri zaten listenizde kayıtlıdır.\nMevcut müşteri listeniz şu şekildedir: \n");
+                foreach (var musteriList in musteriler)
+                {
+                    Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " + musteriList.Tckn + " " + musteriList.Cinsiyet + " " + musteriList.Yas + " " + musteriList.Uyruk);
+                }
+
+                Console.WriteLine("-----------------------------------------------------------");
             }
             else
             {
@@ -51,9 +57,10 @@ namespace ClassMetotDemo
                 {
                     eklenecekListe[j] = musteri;
 
-                    Console.WriteLine(musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı;" +
+                    Console.WriteLine(musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı; " +
                                       musteri.Tckn + " kimlik numaralı müşteri sisteme başarıyla eklenmiştir.\n");
                     Console.WriteLine("Güncel liste: \n");
+
                     foreach (var musteriList in eklenecekListe)
                     {
                         Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " +
