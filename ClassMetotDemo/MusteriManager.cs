@@ -40,22 +40,31 @@ namespace ClassMetotDemo
             Musteri[] eklenecekListe;
             eklenecekListe = musteriler;
 
-            Array.Resize(ref eklenecekListe, eklenecekListe.Length + 1);
-            for (int j = musteriler.Length; j < eklenecekListe.Length; j++)
+            if (Array.Exists(musteriler, m => m.Tckn == musteri.Tckn))
             {
-
-                eklenecekListe[j] = musteri;
-
-                Console.WriteLine(musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı;" + musteri.Tckn + " kimlik numaralı müşteri sisteme başarıyla eklenmiştir.\n");
-                Console.WriteLine("Güncel liste: \n");
-                foreach (var musteriList in eklenecekListe)
-                {
-                    Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " + musteriList.Tckn + " " + musteriList.Cinsiyet + " " + musteriList.Yas + " " + musteriList.Uyruk);
-                }
+                Console.WriteLine("Eklemek istediğiniz müşteri zaten listenizde kayıtlıdır.");
             }
+            else
+            {
+                Array.Resize(ref eklenecekListe, eklenecekListe.Length + 1);
+                for (int j = musteriler.Length; j < eklenecekListe.Length; j++)
+                {
+                    eklenecekListe[j] = musteri;
 
-            Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine(musteri.MusteriAdi + " adlı; " + musteri.MusteriSoyadi + " soyadlı;" +
+                                      musteri.Tckn + " kimlik numaralı müşteri sisteme başarıyla eklenmiştir.\n");
+                    Console.WriteLine("Güncel liste: \n");
+                    foreach (var musteriList in eklenecekListe)
+                    {
+                        Console.WriteLine(musteriList.MusteriAdi + " " + musteriList.MusteriSoyadi + " " +
+                                          musteriList.Tckn + " " + musteriList.Cinsiyet + " " + musteriList.Yas + " " +
+                                          musteriList.Uyruk);
+                    }
+                }
 
+                Console.WriteLine("-----------------------------------------------------------");
+                
+            }
         }
 
         internal void MusteriSil(Musteri[] musteriler, Musteri musteri)
