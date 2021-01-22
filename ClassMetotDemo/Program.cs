@@ -43,9 +43,9 @@ namespace ClassMetotDemo
 
             //musteriManager.MusteriListele(musteriler);
 
-            //musteriManager.MusteriEkle(musteriler,musteri3);
+            //musteriManager.MusteriEkle(musteriler3,musteri3);
 
-            //musteriManager.MusteriSil(musteriler,musteri3);
+            musteriManager.MusteriSil(musteriler3,musteri3);
         }
     }
 }
