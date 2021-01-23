@@ -7,13 +7,13 @@ namespace MyDictionaryProject
     {
         static void Main(string[] args)
         {
-            MyDictionary<int,string> namelist = new MyDictionary<int, string>();
+            MyDictionary<int,string> nameList = new MyDictionary<int, string>();
 
-            namelist.Add(1,"Murat");
-            namelist.Add(2,"Engin");
+            nameList.Add(1,"Murat");
+            nameList.Add(2,"Engin");
             
 
-            Console.WriteLine(namelist.Count);
+            Console.WriteLine(nameList.Count);
 
         }
         
