@@ -63,6 +63,9 @@ namespace OyunProject
             MusteriManager musteriManager = new MusteriManager(musteriDogrulamaManager);
             //musteriManager.Add(musteri);
 
+            OyunManager oyunManager = new OyunManager();
+            //oyunManager.Delete(oyun);
+
             SatisManager satisManager = new SatisManager();
             satisManager.SatisYap(musteri, kampanya2, oyunListBos);
         }
