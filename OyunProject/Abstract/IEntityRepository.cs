@@ -1,7 +1,7 @@
-﻿using OyunProject.Abstract.Imzalama;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using OyunProject.Abstract.Entities;
 
 namespace OyunProject.Abstract
 {

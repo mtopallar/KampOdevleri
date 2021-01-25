@@ -1,5 +1,5 @@
 ﻿using System;
-using OyunProject.Abstract.Imzalama;
+using OyunProject.Abstract.Entities;
 
 namespace OyunProject.Entities
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
-using OyunProject.Abstract.Imzalama;
+using OyunProject.Abstract.Entities;
 
 namespace OyunProject.Entities
 {
