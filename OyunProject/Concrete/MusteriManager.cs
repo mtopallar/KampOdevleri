@@ -35,6 +35,7 @@ namespace OyunProject.Concrete
         public void Delete(Musteri musteri)
         {
             Console.WriteLine(musteri.Id+"' id li müşteri başarıyla silinmiştir.");
+
         }
     }
 }
