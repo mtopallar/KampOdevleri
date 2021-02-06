@@ -8,7 +8,7 @@ namespace OyunProject.Concrete
 {
     class MusteriManager:IMusteriService
     {
-        private IMusteriDogrulamaService _musteriDogrulamaService;
+        private IMusteriDogrulamaService _musteriDogrulamaService; //mikro service
 
         public MusteriManager(IMusteriDogrulamaService musteriDogrulamaService)
         {
